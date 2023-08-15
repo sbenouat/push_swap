@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:22:41 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 07:25:43 by sbenouat         ###   ########.fr       */
+/*   Created: 2023/08/15 07:19:30 by sbenouat          #+#    #+#             */
+/*   Updated: 2023/08/15 07:25:52 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "printf/ft_printf.h"
-# include "printf/libft/libft.h"
+// Swap the first 2 elements at the beginning of a linked list
+void	swap(t_list *a)
+{
+	char	*tmp;
 
-t_list	*init_stack(int ac, char **av);
-int		check_args(int ac, char **av);
-int		check_duplicate(int ac, char **av);
-void	swap(t_list *a);
-void	ss(t_list *a, t_list *b);
+	if (a && a->next)
+	{
+		tmp = (char *)a->content;
+		a->content = a->next->content;
+		a->next->content = tmp;
+	}
+}
 
-#endif
+// Swap the first 2 elements of 2 linked lists
+void	ss(t_list *a, t_list *b)
+{
+	swap(a);
+	swap(b);
+}
