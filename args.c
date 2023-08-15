@@ -6,7 +6,7 @@
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 05:52:54 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 06:24:27 by sbenouat         ###   ########.fr       */
+/*   Updated: 2023/08/15 07:15:08 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	check_args(int ac, char **av)
 	while (i < ac)
 	{
 		j = 0;
+		if (av[i][j] == '-' || av[i][j] == '+')
+			j++;
 		if (ft_atoi(av[i]) > INT_MAX || ft_atoi(av[i]) < INT_MIN)
 			return (1);
 		while (av[i][j])
@@ -56,4 +58,20 @@ int	check_duplicate(int ac, char **av)
 		i++;
 	}
 	return (0);
+}
+
+// initialize t_list a with args
+t_list	*init_stack(int ac, char **av)
+{
+	t_list	*a;
+	int		i;
+
+	i = 1;
+	a = NULL;
+	while (i < ac)
+	{
+		ft_lstadd_back(&a, ft_lstnew(av[i]));
+		i++;
+	}
+	return (a);
 }

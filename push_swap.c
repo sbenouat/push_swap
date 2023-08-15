@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/22 23:48:31 by sbenouat          #+#    #+#             */
-/*   Updated: 2022/12/20 09:08:27 by sbenouat         ###   ########.fr       */
+/*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
+/*   Updated: 2023/08/15 07:16:33 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_bzero(void *s, size_t n)
+int	main(int argc, char **argv)
 {
-	unsigned char	*inter;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
-	inter = s;
-	while (n--)
+	if (argc < 2)
+		return (0);
+	if (check_args(argc, argv) == 1)
 	{
-		*inter++ = 0;
+		ft_printf("Error\n");
+		return (0);
 	}
+	stack_a = (t_list *)malloc(sizeof(t_list));
+	stack_b = (t_list *)malloc(sizeof(t_list));
+	if (!stack_a || !stack_b)
+		return (0);
+	stack_a = init_stack(argc, argv);
+	stack_b = ft_lstnew(NULL);
+	return (0);
 }

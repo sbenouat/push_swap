@@ -6,13 +6,13 @@
 #    By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/15 05:14:01 by sbenouat          #+#    #+#              #
-#    Updated: 2023/08/15 06:17:35 by sbenouat         ###   ########.fr        #
+#    Updated: 2023/08/15 06:55:00 by sbenouat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
-SRCS = main.c args.c
+SRCS = push_swap.c args.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 LIBPRINTF_DIR = ./printf
