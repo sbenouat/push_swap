@@ -6,7 +6,7 @@
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 05:22:41 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 07:46:15 by sbenouat         ###   ########.fr       */
+/*   Updated: 2023/08/15 07:52:03 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ void	swap_both(t_list *a, t_list *b);
 void	push(t_list **a, t_list **b);
 void	rotate(t_list **stack_a);
 void	rotate_both(t_list **stack_a, t_list **stack_b);
+void	reverse_rotate(t_list **a);
+void	reverse_rotate_both(t_list **a, t_list **b);
 
 #endif
