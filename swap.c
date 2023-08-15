@@ -6,7 +6,7 @@
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 07:19:30 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 07:25:52 by sbenouat         ###   ########.fr       */
+/*   Updated: 2023/08/15 07:41:57 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	swap(t_list *a)
 }
 
 // Swap the first 2 elements of 2 linked lists
-void	ss(t_list *a, t_list *b)
+void	swap_both(t_list *a, t_list *b)
 {
 	swap(a);
 	swap(b);

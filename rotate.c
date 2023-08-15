@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 07:27:49 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 07:48:24 by sbenouat         ###   ########.fr       */
+/*   Created: 2023/08/15 07:39:51 by sbenouat          #+#    #+#             */
+/*   Updated: 2023/08/15 07:48:13 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//Take the first element of linked list b and put it at the top of linked list a
-void	push(t_list **a, t_list **b)
+// Shift up all elements of linked list a by 1
+void	rotate(t_list **stack_a)
 {
 	t_list	*tmp;
+	t_list	*last;
 
-	if (!*b)
-		return ;
-	if ((*a)->content == NULL)
+	if (*stack_a && (*stack_a)->next)
 	{
-		*a = ft_lstnew((*b)->content);
-		*b = (*b)->next;
+		tmp = *stack_a;
+		last = ft_lstlast(*stack_a);
+		*stack_a = (*stack_a)->next;
+		tmp->next = NULL;
+		last->next = tmp;
 	}
-	else
-	{
-		tmp = *b;
-		*b = (*b)->next;
-		tmp->next = *a;
-		*a = tmp;
-	}
+}
+
+// ra and rb at the same time.
+void	rotate_both(t_list **stack_a, t_list **stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
 }
