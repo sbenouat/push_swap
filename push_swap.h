@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 06:24:37 by sbenouat         ###   ########.fr       */
+/*   Created: 2023/08/15 05:22:41 by sbenouat          #+#    #+#             */
+/*   Updated: 2023/08/15 06:23:07 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int	main(int argc, char **argv)
+# include "printf/ft_printf.h"
+# include "printf/libft/libft.h"
+
+typedef struct Stack
 {
-	if (argc < 2)
-		return (0);
-	if (check_args(argc, argv) == 1)
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
-	return (0);
-}
+	t_list			*top;
+}	Stack;
+
+int	check_args(int ac, char **av);
+int	check_duplicate(int ac, char **av);
+
+#endif

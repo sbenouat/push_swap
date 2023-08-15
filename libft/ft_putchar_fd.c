@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 06:24:37 by sbenouat         ###   ########.fr       */
+/*   Created: 2022/12/19 14:03:10 by sbenouat          #+#    #+#             */
+/*   Updated: 2022/12/19 14:31:17 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (argc < 2)
-		return (0);
-	if (check_args(argc, argv) == 1)
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
-	return (0);
+	write(fd, &c, 1);
 }

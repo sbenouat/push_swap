@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 06:24:37 by sbenouat         ###   ########.fr       */
+/*   Created: 2022/11/22 23:22:43 by sbenouat          #+#    #+#             */
+/*   Updated: 2022/12/20 07:04:34 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if (argc < 2)
-		return (0);
-	if (check_args(argc, argv) == 1)
+	unsigned char	*inter;
+
+	inter = b;
+	while (len--)
 	{
-		ft_printf("Error\n");
-		return (0);
+		*inter++ = (unsigned char)c;
 	}
-	return (0);
+	return (b);
 }

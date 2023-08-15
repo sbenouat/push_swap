@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 06:24:37 by sbenouat         ###   ########.fr       */
+/*   Created: 2022/11/22 23:48:31 by sbenouat          #+#    #+#             */
+/*   Updated: 2022/12/20 09:08:27 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_bzero(void *s, size_t n)
 {
-	if (argc < 2)
-		return (0);
-	if (check_args(argc, argv) == 1)
+	unsigned char	*inter;
+
+	inter = s;
+	while (n--)
 	{
-		ft_printf("Error\n");
-		return (0);
+		*inter++ = 0;
 	}
-	return (0);
 }

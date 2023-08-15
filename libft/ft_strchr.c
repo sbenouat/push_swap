@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 06:24:37 by sbenouat         ###   ########.fr       */
+/*   Created: 2022/11/08 16:14:51 by sbenouat          #+#    #+#             */
+/*   Updated: 2022/12/23 09:40:46 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strchr(const char *s, int c)
 {
-	if (argc < 2)
-		return (0);
-	if (check_args(argc, argv) == 1)
+	char	*rslt;
+
+	rslt = (char *)s;
+	while (*rslt)
 	{
-		ft_printf("Error\n");
-		return (0);
+		if (*rslt == (const char)c)
+			return (rslt);
+		rslt++;
 	}
-	return (0);
+	if (*rslt == (const char)c)
+		return (rslt);
+	return (NULL);
 }

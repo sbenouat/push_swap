@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 06:24:37 by sbenouat         ###   ########.fr       */
+/*   Created: 2022/11/23 02:08:24 by sbenouat          #+#    #+#             */
+/*   Updated: 2022/11/23 02:18:21 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (argc < 2)
-		return (0);
-	if (check_args(argc, argv) == 1)
+	unsigned char	*inter_s1;
+	unsigned char	*inter_s2;
+	size_t			i;
+
+	inter_s1 = (unsigned char *)s1;
+	inter_s2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
 	{
-		ft_printf("Error\n");
-		return (0);
+		if (inter_s1[i] != inter_s2[i])
+			return (inter_s1[i] - inter_s2[i]);
+		i++;
 	}
 	return (0);
 }

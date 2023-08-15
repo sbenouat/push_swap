@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 06:24:37 by sbenouat         ###   ########.fr       */
+/*   Created: 2022/12/20 11:15:10 by sbenouat          #+#    #+#             */
+/*   Updated: 2022/12/20 11:19:40 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_lstsize(t_list *lst)
 {
-	if (argc < 2)
-		return (0);
-	if (check_args(argc, argv) == 1)
+	int	i;
+
+	i = 0;
+	while (lst)
 	{
-		ft_printf("Error\n");
-		return (0);
+		lst = lst->next;
+		i++;
 	}
-	return (0);
+	return (i);
 }

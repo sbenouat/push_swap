@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 06:24:37 by sbenouat         ###   ########.fr       */
+/*   Created: 2022/12/19 16:27:14 by sbenouat          #+#    #+#             */
+/*   Updated: 2022/12/20 10:52:04 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (argc < 2)
-		return (0);
-	if (check_args(argc, argv) == 1)
+	size_t	i;
+	size_t	j;
+
+	if (!big && len == 0)
+		return (NULL);
+	if (!little[0])
+		return ((char *)big);
+	i = 0;
+	while (big[i] && i < len)
 	{
-		ft_printf("Error\n");
-		return (0);
+		j = 0;
+		while (big[i + j] && little[j]
+			&& i + j < len && big[i + j] == little[j])
+			j++;
+		if (!little[j])
+			return ((char *)(big + i));
+		i++;
 	}
-	return (0);
+	return (NULL);
 }

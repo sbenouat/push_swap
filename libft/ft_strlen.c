@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 06:24:37 by sbenouat         ###   ########.fr       */
+/*   Created: 2022/11/08 15:33:46 by sbenouat          #+#    #+#             */
+/*   Updated: 2022/11/08 15:49:24 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+size_t	ft_strlen(const char *s)
 {
-	if (argc < 2)
-		return (0);
-	if (check_args(argc, argv) == 1)
+	size_t	rslt;
+
+	rslt = 0;
+	while (*s)
 	{
-		ft_printf("Error\n");
-		return (0);
+		rslt++;
+		s++;
 	}
-	return (0);
+	return (rslt);
 }

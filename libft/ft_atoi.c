@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 06:24:37 by sbenouat         ###   ########.fr       */
+/*   Created: 2022/11/08 16:28:19 by sbenouat          #+#    #+#             */
+/*   Updated: 2022/12/23 09:11:05 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_atoi(const char *nbr)
 {
-	if (argc < 2)
-		return (0);
-	if (check_args(argc, argv) == 1)
+	int	sign;
+	int	rslt;
+
+	rslt = 0;
+	sign = 1;
+	while ((*nbr > 8 && *nbr < 14) || *nbr == 32)
+		nbr++;
+	if (*nbr == '-' || *nbr == '+')
 	{
-		ft_printf("Error\n");
-		return (0);
+		if (*nbr == '-')
+			sign = -1;
+		nbr++;
 	}
-	return (0);
+	while (ft_isdigit(*nbr) == 1)
+	{
+		rslt = (rslt * 10) + (*nbr - 48);
+		nbr++;
+	}
+	return (rslt * sign);
 }
