@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/15 05:22:41 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 07:29:43 by sbenouat         ###   ########.fr       */
+/*   Created: 2023/08/15 07:27:49 by sbenouat          #+#    #+#             */
+/*   Updated: 2023/08/15 07:38:11 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "printf/ft_printf.h"
-# include "printf/libft/libft.h"
+//Take the first element of linked list b and put it at the top of linked list a. Do nothing if b is empty.
+void	push(t_list **a, t_list **b)
+{
+	t_list	*tmp;
 
-t_list	*init_stack(int ac, char **av);
-int		check_args(int ac, char **av);
-int		check_duplicate(int ac, char **av);
-void	swap(t_list *a);
-void	ss(t_list *a, t_list *b);
-void	push(t_list **a, t_list **b);
-
-#endif
+	if (!*b)
+		return ;
+	if ((*a)->content == NULL)
+	{
+		*a = ft_lstnew((*b)->content);
+		*b = (*b)->next;
+	}
+	else
+	{
+		tmp = *b;
+		*b = (*b)->next;
+		tmp->next = *a;
+		*a = tmp;
+	}
+}

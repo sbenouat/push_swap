@@ -6,7 +6,7 @@
 /*   By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 05:51:18 by sbenouat          #+#    #+#             */
-/*   Updated: 2023/08/15 07:26:30 by sbenouat         ###   ########.fr       */
+/*   Updated: 2023/08/15 07:38:40 by sbenouat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,5 @@ int	main(int argc, char **argv)
 		return (0);
 	stack_a = init_stack(argc, argv);
 	stack_b = ft_lstnew(NULL);
-	print_linked_list(stack_a);
-	ft_printf("\n");
-	swap(stack_a);
-	print_linked_list(stack_a);
-	ft_printf("\n");
 	return (0);
 }
