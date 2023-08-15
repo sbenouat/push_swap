@@ -6,13 +6,13 @@
 #    By: sbenouat <sbenouat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/15 05:14:01 by sbenouat          #+#    #+#              #
-#    Updated: 2023/08/15 07:51:31 by sbenouat         ###   ########.fr        #
+#    Updated: 2023/08/15 08:13:23 by sbenouat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
-SRCS = push_swap.c args.c swap.c push.c rotate.c reverse.c
+SRCS = push_swap.c args.c swap.c push.c rotate.c reverse.c case3.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 LIBPRINTF_DIR = ./printf
